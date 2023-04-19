@@ -1,0 +1,25 @@
+// sinh dãy nhị phân
+ll NP(ll i)
+{
+    int j;
+    for(j=0;j<=1;j++)
+    {
+        a[i]=j;
+        if(i==n) out(n);
+        else NP(i+1);
+ 
+    }
+}
+// sinh hoán vị
+void HV(int i)
+{
+    for (int j=1;j<=n;j++)
+        if (b[j]==false)
+        {
+            b[j]=true;
+            x[i]=j;
+            if (i==n) out();
+            else HV(i+1);
+            b[j]=false;
+        }
+}
