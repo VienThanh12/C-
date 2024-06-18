@@ -2,30 +2,25 @@
 #include<algorithm>
 using namespace std;
 typedef long long ll;
+#define For(type, i, a, b) for (type i = (a); i <= (b); ++i)
+#define endl '\n'
 
-ll res = 0, ans = 0;
 ll test;
-ll n;
+ll res = 0;
+ll n, a, b;
 
 int main(){
     cin >> test;
     while(test--){
-        cin >> n;
-        ans = 0;
-        for(ll i = 2; i <= n; i++){
-            res = 0;
-            ll k = n / i;
-            res = k * (1 + k) / 2 * i;
-            ans = max(ans, res);
+        cin >> n >> a >> b;
+        if(b - a > 0){
+            ll temp = min(b - a, n);
+            ll first = b;
+            ll second = b - temp + 1;
+            //cout << first << " " << second << " " << temp << endl; 
+            res = temp * (first + second) / 2 + (n - temp) * a;
         }
-        for(ll i = 2; i <= n; i++){
-            res = 0;
-            ll k = n / i;
-            res = k * (1 + k) / 2 * i;
-            if(res == ans){
-                cout << i << endl;
-                break;
-            }
-        }
+        else res = n * a;
+        cout << res << endl;
     }
 }

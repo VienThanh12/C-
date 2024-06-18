@@ -1,53 +1,61 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <vector>
 using namespace std;
-typedef long long ll;
 
-ll res = 0, ans = 0;
-ll test;
-ll n, m;
-const ll limit = 3 * 1e5 + 5;
-ll a[limit];
-ll b[limit];
-
-// a[i] la hang
-// b[i] la cot
-int main(){
-    cin >> test;
-    while(test--){
-        cin >> n >> m;
-        ll ans = 0, res = 0;
-        ll u = 0, v = 0;
-        for(ll i = 1; i <= n; i++)
-            a[i] = 0;
-        for(ll i = 1; i <= m; i++)
-            b[i] = 0;
-        for(ll i = 1; i <= n; i++){
-            string t;
-            cin >> t;
-            for(ll j = 0; j < t.length(); j++){
-                if(t[j] == '#'){
-                    a[i] ++;
-                    b[j + 1] ++;
+void solve() {
+    int t;
+    cin >> t;
+    
+    while (t--) {
+        int n;
+        long long k;
+        cin >> n >> k;
+        
+        long long max_possible = (long long)(n - 1) * n / 2;
+        
+        if (k > max_possible) {
+            cout << "No" << endl;
+            continue;
+        }
+        
+        cout << "Yes" << endl;
+        vector<int> p(n);
+        
+        // Initialize the permutation as [1, 2, ..., n]
+        for (int i = 0; i < n; ++i) {
+            p[i] = i + 1;
+        }
+        
+        long long current_value = 0;
+        
+        // Adjust the permutation to achieve the desired Manhattan value
+        for (int i = n - 1; i >= 0; --i) {
+            int max_additional_value = i;
+            if (current_value + max_additional_value <= k) {
+                current_value += max_additional_value;
+                swap(p[i], p[n - 1 - i]);
+            } else {
+                // When adding the whole max_additional_value exceeds k,
+                // we perform a partial swap to just reach k
+                int needed_value = k - current_value;
+                if (needed_value > 0) {
+                    swap(p[n - 1 - needed_value], p[n - 1 - i]);
                 }
-            }
-        }
-        for(ll i = 1; i <= n; i++)  
-            u = max(u, a[i]);
-        for(ll i = 1; i <= m; i++)
-            v = max(v, b[i]);
-
-        for(ll i = 1; i <= n; i++){
-            if(a[i] == u){
-                cout << i << " ";
                 break;
             }
         }
-        for(ll i = 1; i <= m; i++){
-            if(b[i] == v){
-                cout << i << endl;
-                break;
-            }
+        
+        // Output the resulting permutation
+        for (int i = 0; i < n; ++i) {
+            cout << p[i] << " ";
         }
+        cout << endl;
     }
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    solve();
+    return 0;
 }
