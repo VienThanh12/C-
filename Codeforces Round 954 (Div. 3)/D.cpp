@@ -57,7 +57,7 @@ int main(){
             v = max(v, cnt_2);
             if(u == 1) u = 0;
             if(v == 1) v = 0;
-            sum = sum + u + v;
+        sum = sum + u + v;
 
             res = min(res, sum);
         }
