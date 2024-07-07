@@ -13,5 +13,8 @@ int main(){
     cin >> test;
     while(test--){
         cin >> n;
+        For(ll, i, 1, n)
+            cout << i << " ";
+        cout << endl;
     }
 }
