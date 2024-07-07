@@ -2,6 +2,13 @@
     "files.associations": {
         "iostream": "cpp",
         "ostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "array": "cpp",
+        "type_traits": "cpp",
+        "limits": "cpp",
+        "ratio": "cpp",
+        "tuple": "cpp",
+        "variant": "cpp",
+        "string": "cpp"
     }
 }

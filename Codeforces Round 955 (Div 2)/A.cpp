@@ -1,5 +1,5 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 typedef long long ll;
 #define For(type, i, a, b) for (type i = (a); i <= (b); ++i)
@@ -8,10 +8,12 @@ typedef long long ll;
 ll res = 0;
 ll test;
 ll n;
+ll a, b, x, y;
 
-int main(){
+int main()
+{
     cin >> test;
-    while(test--){
-        cin >> n;
+    while (test--)
+    {
     }
 }
