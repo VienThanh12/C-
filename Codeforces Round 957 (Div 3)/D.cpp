@@ -18,7 +18,7 @@ int main(){
     while(test--){
         cin >> n >> m >> k;
         cin >> s;
-        For(ll, i, 0, n + 2){
+        For(ll, i, 0, n + 1){
             a[i] = 0;
             b[i] = 0;
         }
@@ -55,23 +55,20 @@ int main(){
                 // cout << a[i + 1] << ' ' << a[i] << endl;
                continue;
             }
-
+ 
             if(a[i + 1] - a[i] > m){
                 a[i] = a[i] + m;
             }
-
+ 
             if(b[a[i + 1] - 1] - b[a[i] - 1] > 0){
                 ok = false;
                 continue;
             } 
-
+ 
             if(s[a[i]] == 'W') k --;
-            if(k < 0){
-                ok = false;
-                continue;
-            }
+ 
             
-
+ 
             if(b[a[i + 1] - 1] - b[a[i] - 1] == 0 && a[i + 1] - a[i] - 1 > k){
                 ok = false;      
                 continue;          

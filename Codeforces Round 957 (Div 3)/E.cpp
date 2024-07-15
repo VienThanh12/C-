@@ -9,9 +9,12 @@ ll res = 0;
 ll test;
 ll n;
 
+    
+
 int main(){
     cin >> test;
     while(test--){
         cin >> n;
+
     }
 }
