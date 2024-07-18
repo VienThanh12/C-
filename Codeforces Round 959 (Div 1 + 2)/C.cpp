@@ -7,11 +7,21 @@ typedef long long ll;
 
 ll res = 0;
 ll test;
-ll n;
+ll n, x;
+const ll limit = 2e5 + 10;
+ll a[limit];
 
 int main(){
     cin >> test;
     while(test--){
-        cin >> n;
+        cin >> n >> x;
+        For(ll, i, 1, n)
+            cin >> a[i];
+        res = 0;
+        For(ll, i, 1, n){
+            ll first = i, second = n;
+            ll mid = (first + second) / 2;
+            while(first <= second)
+        }
     }
 }
