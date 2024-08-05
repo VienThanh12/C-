@@ -12,8 +12,9 @@ string s;
 
 int main(){
     cin >> test;
-
+    
     while(test--){
+        cin >> n;
         ll cnt_A = 0, cnt_B = 0, cnt_C = 0, cnt_D = 0, cnt_E = 0, cnt_F = 0, cnt_G = 0;
         cin >> n >> m;
         res = 0;
@@ -28,7 +29,6 @@ int main(){
             if(s[i] == 'F') cnt_F ++;
             if(s[i] == 'G') cnt_G ++;
         }
-        // cout << cnt_A << " " << cnt_B << " " << cnt_C << endl;
-        cout << max(ll(0), m - cnt_A) + max(ll(0), m - cnt_B) + max(ll(0), m - cnt_C) + max(ll(0), m - cnt_D) + max(ll(0), m - cnt_E) + max(ll(0), m - cnt_F) + max(ll(0), m - cnt_G) << endl;
+        cout << cnt_A << " " << cnt_B << " " << cnt_C << endl;
     }
 }
