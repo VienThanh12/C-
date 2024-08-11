@@ -10,39 +10,34 @@ ll x, y, k;
 
 void solve() {
 	cin >> x >> y >> k;
-    ll cnt = 1;
-    if(k % 2 == 0){
-        For(ll, i, 1, k - 2){
-            if(i % 2 == 1){
-                cout << cnt << " " << cnt << endl;
-                cnt = -cnt;
-            }
-            else if(i % 2 == 0){
-                cout << cnt << " " << cnt << endl;
-                cnt = -cnt;
-                cnt ++;
-            }
-        }
-        cout << 0 <<" " << 0 << endl;
-        cout << x << " " << y << endl;
-        return;
-    }
-
-     if(k % 2 == 1){
+    if(k % 2 == 1){
+        cout << x <<" " << y << endl;
+        ll cnt_down = x, cnt_up = x;
         For(ll, i, 1, k - 1){
             if(i % 2 == 1){
-                cout << cnt << " " << cnt << endl;
-                cnt = -cnt;
+                cnt_up ++;
+                cout << cnt_up <<" " << y << endl;
             }
             else if(i % 2 == 0){
-                cout << cnt << " " << cnt << endl;
-                cnt ++;
+                cnt_down --;
+                cout << cnt_down <<" " << y << endl;
             }
         }
-        cout << x << " " << y << endl;
-        return;
     }
+    else {
+        ll cnt_down = x, cnt_up = x;
 
+        For(ll, i, 1, k){
+            if(i % 2 == 1){
+                cnt_up ++;
+                cout << cnt_up <<" " << y << endl;
+            }
+            else if(i % 2 == 0){
+                cnt_down --;
+                cout << cnt_down <<" " << y << endl;
+            }
+        }
+    }
 }
  
 int main() {
