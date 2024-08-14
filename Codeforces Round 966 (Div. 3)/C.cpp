@@ -8,10 +8,10 @@ typedef long long ll;
 #define endl '\n'
  
 
-const ll limit = 2e5 + 10;
+const ll limit = 2e5 + 100;
 ll a[limit];
 
-ll seen[50];
+ll seen[200];
 
 ll n, m;
 string s;
@@ -39,24 +39,21 @@ void solve() {
 			else if(seen[int(s[i] - 97)] != -1e18 && seen[int(s[i] - 97)] != a[i + 1]){
 				ok = false;
 			}
-		}
-		For(ll, i, 1, n){
-			if(dp[a[i]] == -1e18){
-				dp[a[i]] = int(s[i - 1]);
+
+			if(dp[a[i + 1]] == -1e18){
+				dp[a[i + 1]] = int(s[i]);
 			}
-			else if(dp[a[i]] != -1e18 && dp[a[i]] != int(s[i - 1])){
+			else if(dp[a[i + 1]] != -1e18 && dp[a[i + 1]] != int(s[i])){
 				ok = false;
 			}
 		}
+		
 		if(ok) {
 			cout << "YES" << endl;
 		}
 		else cout <<"NO" << endl;
 
-		For(ll, i, 0, s.length() - 1){
-			seen[int(s[i] - 97)] = -1e18;
-			dp[a[i + 1]] = -1e18;
-		}
+		
 	}
 }
  

@@ -10,6 +10,8 @@
         "tuple": "cpp",
         "variant": "cpp",
         "string": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp"
     }
 }
