@@ -43,11 +43,18 @@ void solve() {
 			if(dp[a[i + 1]] == -1e18){
 				dp[a[i + 1]] = int(s[i]);
 			}
-			else if(dp[a[i + 1]] != -1e18 && dp[a[i + 1]] != int(s[i])){
+			else if(dp[a[i + 1]] != -1e18 && dp[a[i + 1]] != int(s[i - 1])){
 				ok = false;
 			}
 		}
-		
+		For(ll, i, 1, n){
+			if(dp[a[i]] == -1e18){
+				dp[a[i]] = int(s[i - 1]);
+			}
+			else if(dp[a[i]] != -1e18 && dp[a[i]] != int(s[i - 1])){
+				ok = false;
+			}
+		}
 		if(ok) {
 			cout << "YES" << endl;
 		}
