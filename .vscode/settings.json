@@ -12,6 +12,7 @@
         "string": "cpp",
         "algorithm": "cpp",
         "__hash_table": "cpp",
-        "__tree": "cpp"
+        "__tree": "cpp",
+        "ios": "cpp"
     }
 }
