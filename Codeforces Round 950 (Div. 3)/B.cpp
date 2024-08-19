@@ -1,34 +1,48 @@
-#include<iostream>
+#include <iostream>
 #include<algorithm>
 using namespace std;
+
 typedef long long ll;
 #define For(type, i, a, b) for (type i = (a); i <= (b); ++i)
 #define endl '\n'
+ 
+const ll limit = 1e4 + 10;
 
-ll res = 0;
-ll test;
-ll n, m;
-string s;
+ll a[limit];
 
-int main(){
-    cin >> test;
-    
-    while(test--){
-        cin >> n;
-        ll cnt_A = 0, cnt_B = 0, cnt_C = 0, cnt_D = 0, cnt_E = 0, cnt_F = 0, cnt_G = 0;
-        cin >> n >> m;
-        res = 0;
-        cin >> s;
+void solve() {
+    ll n, f, k;
+    cin >> n >> f >> k;
+    For(ll, i, 1, n)
+        cin >> a[i];
+    ll fav = a[f];
+    sort(a + 1, a + 1 + n, greater<int>());
 
-        For(ll, i, 0, s.length() - 1){
-            if(s[i] == 'A') cnt_A ++;
-            if(s[i] == 'B') cnt_B ++;
-            if(s[i] == 'C') cnt_C ++;
-            if(s[i] == 'D') cnt_D ++;
-            if(s[i] == 'E') cnt_E ++;
-            if(s[i] == 'F') cnt_F ++;
-            if(s[i] == 'G') cnt_G ++;
-        }
-        cout << cnt_A << " " << cnt_B << " " << cnt_C << endl;
+    //  cout << fav << endl;
+    //  cout << a[k] << endl;
+    if(fav < a[k]) {
+        cout <<"NO" << endl;
+        return;
     }
+    if(fav > a[k]){
+        cout << "YES" << endl;
+        return;
+    }
+    if(a[k] != a[k + 1] || k == n){
+        cout <<"YES" << endl;
+        return;
+    }
+    if(fav == a[k] && a[k] == a[k + 1] && k + 1 <= n){
+        cout << "MAYBE" << endl;
+        return;
+    }
+    For(ll, i, 1, n){
+        a[i] = -1e18;
+    }
+}
+ 
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int tt; cin >> tt; for (int i = 1; i <= tt; i++) {solve();}
 }
