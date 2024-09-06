@@ -9,7 +9,7 @@ typedef long long ll;
 ll n, k;
 
 
-ll cal(ll x, ll y) {
+ll cal(ll x, ll y) {a
     return y * (y + 1) / 2 - x * (x - 1) / 2;
 }
 void solve() {
