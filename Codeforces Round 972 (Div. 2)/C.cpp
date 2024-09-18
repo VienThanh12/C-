@@ -27,7 +27,7 @@ void solve() {
         while(first <= second){
             mid = (first + second) / 2;
             if(x <= b[mid]){
-                pos = min(pos, mid);
+                pos = min(pos, mid); // remember which number do you want to find
                 second = mid - 1;   
             }
             else first = mid + 1;
