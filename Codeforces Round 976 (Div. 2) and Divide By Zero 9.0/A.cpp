@@ -24,16 +24,17 @@ void solve() {
         cout << n << endl;
         return;
     }
-    while(pow(k, cnt) <= n){
+    while(Pow(k, cnt) <= n){
         cnt++;
     }
     cnt --;
-    // cout << cnt << endl;
+    //  cout << cnt << endl;
     ll res = 0;
     while(n != 0){
-        n -= pow(k, cnt);
-        res ++;
-        while(n < pow(k, cnt)){
+        ll temp = n / Pow(k, cnt);
+        n -= temp * Pow(k, cnt);
+        res += temp;
+        while(n < Pow(k, cnt)){
             cnt --;
         }
         if(cnt == 0){
