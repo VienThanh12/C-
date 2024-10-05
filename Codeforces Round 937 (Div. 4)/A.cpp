@@ -1,21 +1,39 @@
 #include <iostream>
-#include<algorithm>
-using namespace std;
-
-typedef long long ll;
-#define For(type, i, a, b) for (type i = (a); i <= (b); ++i)
-#define endl '\n'
- 
-
-void solve() {
-	ll a, b, c;
-    cin >> a >> b >> c;
-
-    a < b && b < c ? cout << "STAIR" << endl : a < b && b > c ? cout <<"PEAK" <<endl : cout <<"NONE" << endl;
-}
+#include <iomanip>
+#include <string>
+#include <sstream>
  
 int main() {
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
-	int tt; cin >> tt; for (int i = 1; i <= tt; i++) {solve();}
+    int t;
+    std::cin >> t;
+    std::cin.ignore(); // Ignore the newline character after the number of test cases
+ 
+    for (int i = 0; i < t; ++i) {
+        std::string s;
+        std::getline(std::cin, s); // Read the entire line, including times like "00:00"
+ 
+        int hh = std::stoi(s.substr(0, 2)); // Extract hours and convert to integer
+        std::string mm = s.substr(3, 2);    // Extract minutes as a string
+        std::string period;
+ 
+        if (hh == 0) {
+            period = "AM";
+            hh = 12;
+        } else if (hh == 12) {
+            period = "PM";
+        } else if (hh > 12) {
+            hh -= 12;
+            period = "PM";
+        } else {
+            period = "AM";
+        }
+ 
+        // Format the hour to ensure leading zeros
+        std::ostringstream oss;
+        oss << std::setw(2) << std::setfill('0') << hh << ":" << mm << " " << period;
+ 
+        std::cout << oss.str() << std::endl;
+    }
+ 
+    return 0;
 }
