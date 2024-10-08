@@ -7,8 +7,12 @@ typedef long long ll;
 #define YES cout << "YES\n"
 #define NO cout << "NO\n"
 
+ll ans = 0, res = 0, temp = 0;
+ll n;
+
 void solve() {
-	
+	cin >> n;
+	cout << n;
 }
  
 int main() {

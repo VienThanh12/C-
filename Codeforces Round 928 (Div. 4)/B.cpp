@@ -22,6 +22,8 @@ void solve() {
                 cnt_1 ++;
         }
 
+
+        
         if(max_1 != 0 && cnt_1 == max_1){
             res = "SQUARE";
         }
