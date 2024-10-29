@@ -14,16 +14,8 @@ void solve() {
 	ll x, y, k;
     cin >> x >> y >> k;
 
-    ll u, v;
-    For(ll, i, 0, x){
-        For(ll, j, 0, y){
-            if((i * i + j * j) >= k * k && i * i - j * j == 0){
-                cout << 0 <<' ' << 0 << ' ' << i << ' ' << j << endl;
-                cout << 0 <<' ' << j << ' ' << i << ' ' << 0 << endl;
-                return;
-            }
-        }
-    }
+    cout << 0 <<' ' << 0 << ' ' << min(x, y) << ' ' << min(x, y) << endl;
+    cout << 0 <<' ' << min(x, y) << ' ' << min(x, y) << ' ' << 0 << endl;
 
 }
  
