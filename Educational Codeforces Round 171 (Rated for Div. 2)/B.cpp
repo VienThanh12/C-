@@ -30,7 +30,6 @@ void solve() {
         cin >> a[i];
     sort(a + 1, a + 1 + n);
     if(n % 2 == 0){
-
         ll res = -1e18;
         for(ll i = 1; i <= n; i += 2){
             res = max(res, a[i + 1] - a[i]);
@@ -57,7 +56,7 @@ void solve() {
     res = 1e18;
     For(ll, i, 1, n){
         ll kd = 1e18, ans = -1e18;
-        For(ll, j, max(ll(0), a[i] - 2005), min(ll(1e18), a[i] + 2005)){
+        For(ll, j, max(ll(0), a[i] - 2), min(ll(1e18), a[i] + 2)){
             if(b[j] == 0){
                 kd = min(kd, abs(a[i] - j));
             } 
