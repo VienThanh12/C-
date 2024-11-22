@@ -10,14 +10,13 @@ typedef long long ll;
 ll ans = 0, res = 0, temp = 0;
 ll n, m, r, c;
 
-
 void solve() {
 	cin >> n >> m >> r >> c;
     ll x = (r - 1) * m + c;
 
     ll remain_peo = ((n * m) - x); 
     ll kd = (remain_peo) / m;
-    // cout << kd  <<" " << remain_peo << endl;
+
 
     kd = max(ll(0), kd);
     
