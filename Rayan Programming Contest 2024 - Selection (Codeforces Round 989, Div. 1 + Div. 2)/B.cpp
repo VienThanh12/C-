@@ -32,7 +32,9 @@ void solve() {
         if(cnt == 0){
             res++;
             For(ll, j, i, i + k - 1){
-                s[j] = '1';
+                if(j <= s.length() - 1){
+                    s[j] = '1';
+                }
             }
             cnt++;
         }
