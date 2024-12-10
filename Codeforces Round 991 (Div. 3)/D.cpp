@@ -13,12 +13,13 @@ string s;
 
 void solve() {
 	cin >> s;
+
     For(ll, i, 0, s.length() - 1){
         ll x = 0;
         char temp = 0;
         ll max_pos = s[i] - 48;
         For(ll, j, i + 1, i + 10){
-            if((s[j] - 48 - j + i) > max_pos){
+            if((s[j] - 48 - j + i) > max_pos && j < s.length()){
                 x = j;
                 temp = s[j] - j + i;
                 max_pos = s[j] - j + i - 48;
