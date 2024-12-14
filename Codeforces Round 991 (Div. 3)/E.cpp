@@ -39,6 +39,12 @@ void solve() {
         }
     }
     
+     For(ll, i, 1, a.length()){
+        For(ll, j, 1, b.length()){
+            cout << dp[i][j] <<" ";
+        }
+        cout << endl;
+    }
     cout << x.length() - res << endl;
 }
  
