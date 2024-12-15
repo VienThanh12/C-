@@ -19,12 +19,12 @@ void solve() {
     res = 0;
     while(x <= r_2){
 
-        ll low = (l_2 + x - 1) / x;
+        ll low = (l_2 + x - 1)/ x;
         ll high = r_2 / x;
         
         ll u = max(l_1, low); 
         ll v = min(r_1, high);
-        // cout << u <<" " << v <<" " << x  << " " << r_1 << " " << r_2 / x << endl;
+        //  cout << u <<" " << v <<" " << x  << " " << r_1 << " " << r_2 / x << endl;
         if(u <= v){
             // cout << v - u + 1 << endl;
             res += v - u + 1;
