@@ -9,10 +9,25 @@ typedef long long ll;
 
 ll ans = 0, res = 0, temp = 0;
 ll n;
+string s;
 
 void solve() {
-	cin >> n;
-	cout << n;
+	cin >> s;
+
+	For(ll, i, 0, s.length() - 1){
+        if(s[i] == 'q'){
+            s[i] = 'p';
+        }
+        else if(s[i] == 'p'){
+            s[i] = 'q';
+        }
+    }
+    ll k = s.length() - 1;
+    For(ll, i, 0, (s.length() - 1) / 2){
+        swap(s[i], s[k]);
+        k --; 
+    }
+    cout << s << endl;
 }
  
 int main() {

@@ -9,10 +9,13 @@ typedef long long ll;
 
 ll ans = 0, res = 0, temp = 0;
 ll n;
-
+ll m, a, b, c;
 void solve() {
-	cin >> n;
-	cout << n;
+	cin >> m >> a >> b >> c;
+    
+    ll seat_c = m * 2 - min(m, a) - min(m, b);
+    // cout << seat_c << endl;
+    cout << min(m, a) + min(m, b) + min(seat_c, c) << endl;
 }
  
 int main() {

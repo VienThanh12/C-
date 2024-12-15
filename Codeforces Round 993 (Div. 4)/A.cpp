@@ -12,7 +12,7 @@ ll n;
 
 void solve() {
 	cin >> n;
-	cout << n;
+    cout << n - 1 << endl;
 }
  
 int main() {

@@ -10,9 +10,50 @@ typedef long long ll;
 ll ans = 0, res = 0, temp = 0;
 ll n;
 
+const ll limit = 2e5 + 10;
+ll a[limit], b[limit], cur[limit];
+
 void solve() {
 	cin >> n;
-	cout << n;
+	For(ll, i, 1, n)    
+        cin >> a[i];
+    res = 1;
+    For(ll, i, 1, n)
+        cur[i] = 1;
+    while(true){
+        res++;
+        For(ll, i, 1, n){
+            b[i] = 0;
+        }
+        For(ll, i, 1, n){
+            if(cur[i]){
+                b[a[i]] = 1;
+            }
+        }
+        bool ok = true;
+        For(ll, i, 1, n){
+            if(b[i] != cur[i])
+                ok = false;
+        }
+        // For(ll, i, 1, n){
+        //     cout << cur[i] <<" ";
+        // }
+        // cout << endl;
+        // For(ll, i, 1, n){
+        //     cout << b[i]  <<" ";
+        // }
+        // cout << endl;
+        if(ok){
+            cout << res << endl;
+            break;
+        }
+        else {
+            For(ll, i, 1, n){
+                cur[i] = b[i];
+            }
+        }
+    } 
+
 }
  
 int main() {
