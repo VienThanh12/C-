@@ -35,14 +35,7 @@ void solve() {
             if(b[i] != cur[i])
                 ok = false;
         }
-        // For(ll, i, 1, n){
-        //     cout << cur[i] <<" ";
-        // }
-        // cout << endl;
-        // For(ll, i, 1, n){
-        //     cout << b[i]  <<" ";
-        // }
-        // cout << endl;
+   
         if(ok){
             cout << res << endl;
             break;
@@ -57,6 +50,7 @@ void solve() {
 }
  
 int main() {
+
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 	int tt; cin >> tt; for (int i = 1; i <= tt; i++) {solve();}
