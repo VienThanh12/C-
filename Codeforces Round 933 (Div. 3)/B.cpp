@@ -25,14 +25,8 @@ void solve() {
             cout <<"NO" << endl;
             return;
         }
-    // For(ll, i, 1, n)
-    //     cout << a[i] <<" ";
-    // cout << endl;
 
     }
-    // For(ll, i, 1, n)
-    //     cout << a[i] <<" ";
-    // cout << endl;
     For(ll, i, 1, n){
         if(a[i] != 0){
             cout <<"NO" << endl;
