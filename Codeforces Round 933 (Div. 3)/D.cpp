@@ -37,6 +37,7 @@ void dfs(char type, ll x, ll i){
 }
 void solve() {
 	cin >> n >> m >> u;
+    
     For(ll, i, 1, m){
         cin >> a[i] >> c[i];
     }
@@ -57,6 +58,7 @@ void solve() {
         if(b[i] == 1)
             cout << i <<" ";
     }
+
     cout << endl;
 }
  
