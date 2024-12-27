@@ -7,14 +7,14 @@ typedef long long ll;
 #define YES cout << "YES\n"
 #define NO cout << "NO\n"
 
-ll ans = 0, res = 0, temp = 0;
+ll res = 0, temp = 0;
 ll n, a, b, c;
 
 void solve() {
 	cin >> n >> a >> b >> c;
 
     ll temp = n / (a + b + c);
-    ans = temp * (a + b + c);
+    ll ans = temp * (a + b + c);
     if(ans == n){
         cout << temp * 3 << endl;
     }
@@ -29,7 +29,7 @@ void solve() {
             cout << temp * 3 + 2 << endl;
             return;
         }
-        a += c;
+        ans += c;
         if(ans >= n){
             cout << temp * 3 + 3 << endl;
             return;
