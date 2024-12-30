@@ -14,6 +14,7 @@ const ll limit  = 4e5 + 10;
 ll a[limit], b[limit], c[limit];
 void solve() {
 	cin >> n >> m >> k;
+    
     For(ll, i, 1, n){
         c[i] = 0;
     }
