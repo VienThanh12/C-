@@ -17,6 +17,7 @@ void solve() {
 	cin >> n;
     For(ll, i, 1, n)
         cin >> a[i];
+        
     dp[0] = 0;
     res = 0;
     For(ll, i, 1, n){
