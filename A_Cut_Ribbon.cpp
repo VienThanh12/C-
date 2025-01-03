@@ -25,6 +25,7 @@ void solve() {
 			if(ans % c == 0){
 				k = ans / c;
 			}
+			
 			if(a * i + b * j + c * k == n && min(i, ll(1)) + min(j, ll(1)) + min(k, ll(1)) >= 1){
 				res = max(res, i + j + k);
 			}
