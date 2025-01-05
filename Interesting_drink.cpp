@@ -19,16 +19,24 @@ void solve() {
     }
     ll x = 1;
     sort(a + 1, a + 1 + n);
-    For(ll, i, 1, 100000){
+    For(ll, i, 1, 100000 + 10){
         dp[i] = dp[i - 1];
-        if(i >= a[x]){
+        if(i >= a[x] && x <= n){
             x++;
             dp[i] ++;
+            while(x <= n && a[x] == a[x - 1]){
+                x++;
+                dp[i]++;
+            }
         }
     }
     cin >> q;
     while(q--){
         cin >> x;
+        if(x > 1e5){
+            cout << dp[100000] << endl;
+        }
+        else
         cout << dp[x] << endl;
     }
     
