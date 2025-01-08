@@ -27,7 +27,9 @@ void solve() {
         cout << "NO" << endl;
         return;
     }
+
     sum /= 2;
+    
     while(sum >= 2 && cnt_2 > 0){
         sum -= 2;
         cnt_2 --;
