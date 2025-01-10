@@ -22,6 +22,7 @@ void solve() {
         }
     }
     sort(a + 1, a + 1 + cnt);
+    
     cnt = 0;
     For(ll, i, 0, s.length() - 1){
         if(i % 2 == 0){
