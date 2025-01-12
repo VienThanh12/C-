@@ -21,6 +21,7 @@ void solve() {
         if(a[i - 1] < a[i]){
             cnt ++;
             res = max(res, cnt);
+            
         }
         else cnt = 1;
     }
