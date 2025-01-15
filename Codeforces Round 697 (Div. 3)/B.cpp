@@ -23,6 +23,7 @@ void solve() {
             break;
         }
     }
+    
     cout << ok << endl;
 }
  
