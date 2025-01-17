@@ -11,6 +11,7 @@ ll ans = 0, res = 0, temp = 0;
 ll n;
 
 void solve() {
+    
     string ok = "NO";
 	cin >> n;
 	
@@ -23,7 +24,7 @@ void solve() {
             break;
         }
     }
-    
+
     cout << ok << endl;
 }
  
