@@ -22,6 +22,7 @@ void solve() {
             cnt++;
         } 
     }
+    
     cnt % 2 == 0 ? cout <<"CHAT WITH HER!" : cout <<"IGNORE HIM!";
 }
  
