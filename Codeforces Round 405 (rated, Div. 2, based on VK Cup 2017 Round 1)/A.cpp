@@ -18,6 +18,7 @@ void solve() {
         a *= 3;
         b *= 2;
     }
+    
     cout << res;
 }
  
